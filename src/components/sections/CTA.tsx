@@ -70,10 +70,10 @@ const CTA = () => {
             </Link>
             
             <Link
-              href="/portfolio"
+              href="/services"
               className="group px-10 py-5 bg-white/10 backdrop-blur-md border-2 border-white/30 text-white font-bold text-lg rounded-xl hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-110 flex items-center justify-center space-x-3"
             >
-              <span>View Portfolio</span>
+              <span>View Our Services</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
             </Link>
           </motion.div>

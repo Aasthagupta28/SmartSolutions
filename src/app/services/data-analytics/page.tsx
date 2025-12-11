@@ -110,10 +110,10 @@ export default function DataAnalytics() {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
               <Link
-                href="/portfolio"
+                href="/services"
                 className="inline-flex items-center border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition-all duration-300"
               >
-                <span>View Data Projects</span>
+                <span>View Our Services</span>
               </Link>
             </div>
           </motion.div>

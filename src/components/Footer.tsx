@@ -12,7 +12,6 @@ const Footer = () => {
     company: [
       { name: 'About Us', href: '/about' },
       { name: 'Our Services', href: '/services' },
-      { name: 'Portfolio', href: '/portfolio' },
       { name: 'Contact', href: '/contact' },
     ],
     services: [
@@ -23,7 +22,6 @@ const Footer = () => {
     ],
     resources: [
       { name: 'Blog', href: '/blog' },
-      { name: 'Case Studies', href: '/portfolio' },
       { name: 'Privacy Policy', href: '/privacy' },
       { name: 'Terms of Service', href: '/terms' },
     ],

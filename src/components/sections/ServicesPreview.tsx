@@ -240,10 +240,10 @@ const ServicesPreview = () => {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                 </Link>
                 <Link
-                  href="/portfolio"
+                  href="/services"
                   className="border-2 border-white/30 text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-white/10 hover:border-white/50 transition-all duration-300 hover:scale-110 backdrop-blur-sm"
                 >
-                  Explore Portfolio
+                  View Our Services
                 </Link>
               </div>
             </div>
