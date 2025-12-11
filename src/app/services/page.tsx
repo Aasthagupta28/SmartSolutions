@@ -114,7 +114,7 @@ export default function Services() {
     {
       icon: Code,
       title: 'Backend Development',
-      description: 'Backend systems and APIs that scale with your business and don't break under pressure.',
+      description: "Backend systems and APIs that scale with your business and don't break under pressure.",
       features: [
         'Django & Python Backend',
         'FastAPI Development',

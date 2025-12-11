@@ -15,13 +15,13 @@ export default function BackendDevelopment() {
     {
       icon: Code,
       title: 'FastAPI Development',
-      description: 'Fast APIs built with FastAPI. They're quick, well-documented, and easy to test.',
+      description: "Fast APIs built with FastAPI. They're quick, well-documented, and easy to test.",
       benefits: ['Automatic documentation', 'Type hints', 'High performance', 'Easy testing']
     },
     {
       icon: Code,
       title: 'RESTful API Development',
-      description: 'REST APIs built the right way. They follow standard practices so they're easy to use and maintain.',
+      description: "REST APIs built the right way. They follow standard practices so they're easy to use and maintain.",
       benefits: ['RESTful architecture', 'HTTP methods', 'Status codes', 'API versioning']
     },
     {

@@ -52,7 +52,7 @@ export default function WebDevelopment() {
     {
       step: '02',
       title: 'Design & Prototyping',
-      description: 'We sketch out the design, show you what it'll look like, and get your approval before we start coding.'
+      description: "We sketch out the design, show you what it'll look like, and get your approval before we start coding."
     },
     {
       step: '03',
@@ -62,7 +62,7 @@ export default function WebDevelopment() {
     {
       step: '04',
       title: 'Testing & Deployment',
-      description: 'We test everything, make sure it's fast, and launch it. Then we're here if you need help or updates.'
+      description: "We test everything, make sure it's fast, and launch it. Then we're here if you need help or updates."
     }
   ]
 

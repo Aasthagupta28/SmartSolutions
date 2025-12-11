@@ -27,7 +27,7 @@ export default function DataAnalytics() {
     {
       icon: Database,
       title: 'Business Intelligence & Reporting',
-      description: 'Dashboards and reports that show you what's happening in your business. Interactive charts and graphs that help you spot trends.',
+      description: "Dashboards and reports that show you what's happening in your business. Interactive charts and graphs that help you spot trends.",
       benefits: ['Interactive dashboards', 'Automated reporting', 'Data visualization', 'KPI tracking']
     }
   ]
@@ -47,7 +47,7 @@ export default function DataAnalytics() {
     {
       step: '01',
       title: 'Data Assessment & Strategy',
-      description: 'We look at what data you have, where it's stored, and figure out the best way to organize and use it.'
+      description: "We look at what data you have, where it's stored, and figure out the best way to organize and use it."
     },
     {
       step: '02',

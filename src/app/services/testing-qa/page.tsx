@@ -9,7 +9,7 @@ export default function TestingQA() {
     {
       icon: Shield,
       title: 'Automated Testing',
-      description: 'Automated tests that run fast and catch bugs early. We set up tests that run automatically so you don't have to test manually every time.',
+      description: "Automated tests that run fast and catch bugs early. We set up tests that run automatically so you don't have to test manually every time.",
       benefits: ['Faster test execution', 'Consistent results', 'Regression testing', 'CI/CD integration']
     },
     {

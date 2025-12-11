@@ -27,7 +27,7 @@ export default function UIUXMarketing() {
     {
       icon: Palette,
       title: 'Digital Marketing Strategy',
-      description: 'Digital marketing plans that bring in customers. Social media, email campaigns, ads, and tracking to see what's working.',
+      description: "Digital marketing plans that bring in customers. Social media, email campaigns, ads, and tracking to see what's working.",
       benefits: ['Social media marketing', 'Email campaigns', 'PPC advertising', 'Analytics tracking']
     }
   ]
