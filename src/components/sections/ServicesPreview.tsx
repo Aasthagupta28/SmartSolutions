@@ -12,31 +12,39 @@ const ServicesPreview = () => {
       description: 'Chatbots that answer customer questions, automation that saves you time, and AI tools that help you make better decisions from your data.',
       technologies: ['AI/ML', 'Python', 'TensorFlow', 'ChatGPT'],
       color: 'from-purple-500 to-pink-500',
-      borderColor: 'border-purple-300'
+      bgGradient: 'from-purple-50 to-pink-50',
+      borderColor: 'border-purple-200',
+      hoverBorder: 'hover:border-purple-400'
     },
     {
       icon: Code,
       title: 'Web Development',
       description: 'Fast websites and web apps that work great on any device. Whether you need a simple site or a complex platform, we build it right.',
       technologies: ['React', 'Next.js', 'Laravel', 'WordPress'],
-      color: 'from-blue-500 to-cyan-500',
-      borderColor: 'border-blue-300'
+      color: 'from-pink-500 to-rose-500',
+      bgGradient: 'from-pink-50 to-rose-50',
+      borderColor: 'border-pink-200',
+      hoverBorder: 'hover:border-pink-400'
     },
     {
       icon: Smartphone,
       title: 'Mobile Development',
       description: 'Mobile apps that feel native on both iPhone and Android. We build apps people actually want to use.',
       technologies: ['React Native', 'Flutter', 'iOS', 'Android'],
-      color: 'from-green-500 to-emerald-500',
-      borderColor: 'border-green-300'
+      color: 'from-purple-600 to-indigo-500',
+      bgGradient: 'from-purple-50 to-indigo-50',
+      borderColor: 'border-purple-200',
+      hoverBorder: 'hover:border-purple-400'
     },
     {
       icon: Palette,
       title: 'UI/UX & Digital Marketing',
       description: 'Designs that look great and work even better. Plus, we help you get found online with SEO and marketing that actually brings in customers.',
       technologies: ['Figma', 'SEO', 'Marketing', 'Analytics'],
-      color: 'from-orange-500 to-red-500',
-      borderColor: 'border-orange-300'
+      color: 'from-pink-600 to-purple-500',
+      bgGradient: 'from-pink-50 to-purple-50',
+      borderColor: 'border-pink-200',
+      hoverBorder: 'hover:border-pink-400'
     }
   ]
 
@@ -67,135 +75,135 @@ const ServicesPreview = () => {
           </p>
         </motion.div>
 
-        {/* Services Grid - All 4 in One Row with Attractive Borders */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        {/* Services Grid - All 4 in One Row with Theme-Matching Design */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ 
-                duration: 0.6, 
-                delay: index * 0.1,
+                duration: 0.5, 
+                delay: index * 0.08,
                 type: "spring",
-                stiffness: 100,
-                damping: 15
+                stiffness: 120,
+                damping: 20
               }}
               viewport={{ once: true }}
               whileHover={{ 
-                y: -10,
-                scale: 1.03,
+                y: -8,
+                scale: 1.02,
                 transition: { duration: 0.3 }
               }}
               className="group relative"
             >
-              {/* Attractive Border with Gradient Shadow */}
-              <div className={`relative bg-white rounded-2xl p-6 border-2 ${service.borderColor} shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden h-full flex flex-col group-hover:border-opacity-100`}>
+              {/* Card with Theme Colors */}
+              <div className={`relative bg-gradient-to-br ${service.bgGradient} rounded-xl p-5 border-2 ${service.borderColor} ${service.hoverBorder} shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col`}>
                 {/* Top Gradient Accent Line */}
-                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.color}`}></div>
+                <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${service.color}`}></div>
                 
-                {/* Glow Effect on Hover */}
+                {/* Subtle Glow Effect on Hover */}
                 <motion.div
-                  className={`absolute -inset-0.5 bg-gradient-to-r ${service.color} rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`}
+                  className={`absolute -inset-1 bg-gradient-to-r ${service.color} rounded-xl opacity-0 group-hover:opacity-15 blur-md transition-opacity duration-500`}
                 />
 
-                {/* Icon - Animated */}
+                {/* Icon - Compact and Animated */}
                 <motion.div
-                  initial={{ opacity: 0, scale: 0, rotate: -180 }}
+                  initial={{ opacity: 0, scale: 0.8, rotate: -90 }}
                   whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                   transition={{ 
-                    duration: 0.8, 
-                    delay: index * 0.1 + 0.2,
+                    duration: 0.6, 
+                    delay: index * 0.08 + 0.15,
                     type: "spring",
-                    stiffness: 120
+                    stiffness: 150
                   }}
                   viewport={{ once: true }}
                   whileHover={{ 
-                    rotate: [0, -10, 10, -10, 0],
-                    scale: 1.15,
-                    transition: { duration: 0.5 }
+                    rotate: [0, -8, 8, -8, 0],
+                    scale: 1.1,
+                    transition: { duration: 0.4 }
                   }}
-                  className="mb-4 flex justify-center relative z-10"
+                  className="mb-3 flex justify-center relative z-10"
                 >
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300`}>
-                    <service.icon className="w-8 h-8 text-white" />
+                  <div className={`w-14 h-14 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300`}>
+                    <service.icon className="w-7 h-7 text-white" />
                   </div>
                 </motion.div>
 
-                {/* Title - Dark, Bold, Left Aligned */}
+                {/* Title - Compact */}
                 <motion.h3
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -15 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                  transition={{ duration: 0.4, delay: index * 0.08 + 0.2 }}
                   viewport={{ once: true }}
-                  className="text-lg md:text-xl font-lato font-bold text-slate-900 mb-3 text-left group-hover:text-purple-600 transition-colors relative z-10"
+                  className="text-base md:text-lg font-lato font-bold text-slate-900 mb-2 text-center group-hover:text-purple-600 transition-colors relative z-10"
                 >
                   {service.title}
                 </motion.h3>
 
-                {/* Description - Grey, Left Aligned */}
+                {/* Description - Compact Height */}
                 <motion.p
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
+                  transition={{ duration: 0.4, delay: index * 0.08 + 0.25 }}
                   viewport={{ once: true }}
-                  className="text-sm text-gray-600 leading-relaxed mb-4 text-left flex-grow relative z-10"
+                  className="text-xs md:text-sm text-gray-600 leading-snug mb-3 text-center flex-grow relative z-10 line-clamp-3"
                 >
                   {service.description}
                 </motion.p>
 
-                {/* Technology Tags - Animated */}
+                {/* Technology Tags - Compact */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
+                  transition={{ duration: 0.4, delay: index * 0.08 + 0.3 }}
                   viewport={{ once: true }}
-                  className="flex flex-wrap gap-2 mb-4 relative z-10"
+                  className="flex flex-wrap gap-1.5 mb-3 justify-center relative z-10"
                 >
-                  {service.technologies.slice(0, 4).map((tech, techIndex) => (
+                  {service.technologies.slice(0, 3).map((tech, techIndex) => (
                     <motion.span
                       key={tech}
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ 
-                        delay: index * 0.1 + 0.5 + techIndex * 0.05,
-                        duration: 0.3
+                        delay: index * 0.08 + 0.3 + techIndex * 0.04,
+                        duration: 0.25
                       }}
                       viewport={{ once: true }}
-                      whileHover={{ scale: 1.1 }}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-md border border-gray-200 hover:bg-purple-50 hover:border-purple-200 hover:text-purple-700 transition-colors cursor-default"
+                      whileHover={{ scale: 1.08 }}
+                      className="px-2 py-0.5 bg-white/80 text-gray-700 text-[10px] md:text-xs font-medium rounded-md border border-gray-200/50 hover:bg-purple-100 hover:border-purple-300 hover:text-purple-700 transition-colors cursor-default shadow-sm"
                     >
                       {tech}
                     </motion.span>
                   ))}
                 </motion.div>
 
-                {/* Learn More Link - Purple, Left Aligned */}
+                {/* Learn More Link - Centered */}
                 <motion.div
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.6 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.4, delay: index * 0.08 + 0.35 }}
                   viewport={{ once: true }}
-                  className="flex justify-start relative z-10"
+                  className="flex justify-center relative z-10 mt-auto"
                 >
                   <Link
                     href="/services"
-                    className="inline-flex items-center text-purple-600 font-semibold hover:text-purple-700 transition-colors group-hover:gap-2 gap-1"
+                    className="inline-flex items-center text-purple-600 font-semibold text-sm hover:text-purple-700 transition-colors group-hover:gap-1.5 gap-1"
                   >
                     <span>Learn More</span>
                     <motion.span
-                      animate={{ x: [0, 4, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity, delay: index * 0.2 }}
+                      animate={{ x: [0, 3, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity, delay: index * 0.15 }}
                       className="inline-block"
                     >
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </motion.span>
                   </Link>
                 </motion.div>
 
-                {/* Decorative Corner Elements */}
-                <div className={`absolute top-2 right-2 w-3 h-3 bg-gradient-to-br ${service.color} rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
-                <div className={`absolute bottom-2 left-2 w-2 h-2 bg-gradient-to-br ${service.color} rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                {/* Decorative Corner Elements - Subtle */}
+                <div className={`absolute top-1.5 right-1.5 w-2 h-2 bg-gradient-to-br ${service.color} rounded-full opacity-0 group-hover:opacity-60 transition-opacity duration-300`}></div>
+                <div className={`absolute bottom-1.5 left-1.5 w-1.5 h-1.5 bg-gradient-to-br ${service.color} rounded-full opacity-0 group-hover:opacity-60 transition-opacity duration-300`}></div>
               </div>
             </motion.div>
           ))}
