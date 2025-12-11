@@ -54,9 +54,8 @@ const PortfolioPreview = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl lg:text-6xl font-poppins font-extrabold text-slate-900 mb-6">
-            Featured
-            <br />
+          <h2 className="text-2xl lg:text-3xl font-lato font-extrabold text-slate-900 mb-6 whitespace-nowrap">
+            Featured{' '}
             <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
               Projects
             </span>
@@ -116,7 +115,7 @@ const PortfolioPreview = () => {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-poppins font-extrabold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
+                  <h3 className="text-xl font-lato font-extrabold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
                     {project.title}
                   </h3>
 

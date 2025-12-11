@@ -176,23 +176,16 @@ export default function Services() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        {/* Video Background */}
+      {/* Hero Section - Full Height with bg.png */}
+      <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center overflow-visible pb-24 md:pb-32">
+        {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/video.mp4" type="video/mp4" />
-          </video>
-          {/* Dark Overlay for better text readability */}
+          <div 
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: 'url(/bg.png)' }}
+          ></div>
+          {/* Dark Overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-purple-900/70 to-slate-900/80"></div>
-          {/* Additional overlay for depth */}
           <div className="absolute inset-0 bg-gradient-to-br from-purple-600/30 via-transparent to-pink-600/30"></div>
         </div>
         
@@ -201,15 +194,15 @@ export default function Services() {
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl lg:text-6xl font-poppins font-bold text-white mb-6">
-              Our <span className="bg-gradient-to-r from-aqua to-primary-400 bg-clip-text text-transparent">Services</span>
+            <h1 className="text-2xl lg:text-3xl font-lato font-bold text-white mb-6 whitespace-nowrap">
+              Our <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Services</span>
             </h1>
             <p className="text-xl lg:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
               We build the tech your business needs. From websites to AI tools, we've got the skills and experience to make it happen.
@@ -218,69 +211,173 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
+      {/* Services Grid - Large Rounded Card on Light Background */}
+      <section className="py-0 bg-white relative overflow-visible z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-[35vh] md:-mt-[30vh] lg:-mt-[25vh] relative z-20">
+          {/* Large Rounded Card Container - Overlapping the hero with border and shadow */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-green-50 rounded-t-[3rem] md:rounded-[3rem] p-8 md:p-12 lg:p-16 shadow-2xl border-4 border-green-100"
+          >
+            {/* Section Title - Image Style */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <motion.p
+                initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
                 viewport={{ once: true }}
-                className={`${service.bgColor} rounded-3xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2`}
+                className="text-sm md:text-base font-semibold text-gray-600 uppercase tracking-wider mb-2"
               >
-                {/* Header */}
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className={`w-16 h-16 ${service.iconBg} rounded-2xl flex items-center justify-center`}>
-                    <service.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-poppins font-bold text-navy">{service.title}</h3>
-                    <p className="text-gray-600">{service.description}</p>
-                  </div>
-                </div>
+                SMART IT CORE SOLUTIONS
+              </motion.p>
+              <motion.h2
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-2xl md:text-3xl lg:text-4xl font-lato font-bold text-slate-900"
+              >
+                Our Services
+              </motion.h2>
+            </motion.div>
 
-                {/* Features */}
-                <div className="mb-6">
-                  <h4 className="font-poppins font-semibold text-navy mb-4">What We Offer:</h4>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Technologies */}
-                <div className="mb-6">
-                  <h4 className="font-poppins font-semibold text-navy mb-4">Technologies:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {service.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 bg-white/80 text-gray-700 text-sm rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* CTA */}
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center bg-gradient-to-r from-navy to-aqua text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
+            {/* Services in 2x2 Grid - Image Style */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {services.slice(0, 4).map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: index * 0.15,
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{ 
+                    y: -8,
+                    scale: 1.02,
+                    transition: { duration: 0.3 }
+                  }}
+                  className="group relative"
                 >
-                  <span>Get Quote</span>
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </motion.div>
-            ))}
-          </div>
+                  {/* Card - White Background with Subtle Border */}
+                  <div className="relative bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden h-full flex flex-col">
+                    {/* Icon - Animated */}
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0, rotate: -180 }}
+                      whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                      transition={{ 
+                        duration: 0.8, 
+                        delay: index * 0.15 + 0.2,
+                        type: "spring",
+                        stiffness: 120
+                      }}
+                      viewport={{ once: true }}
+                      whileHover={{ 
+                        rotate: [0, -5, 5, -5, 0],
+                        scale: 1.1,
+                        transition: { duration: 0.4 }
+                      }}
+                      className="mb-4 flex justify-center"
+                    >
+                      <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center shadow-md group-hover:shadow-xl transition-shadow duration-300`}>
+                        <service.icon className="w-8 h-8 text-white" />
+                      </div>
+                    </motion.div>
+
+                    {/* Title - Dark, Bold, Left Aligned */}
+                    <motion.h3
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.15 + 0.3 }}
+                      viewport={{ once: true }}
+                      className="text-lg md:text-xl font-lato font-bold text-slate-900 mb-3 text-left group-hover:text-purple-600 transition-colors"
+                    >
+                      {service.title}
+                    </motion.h3>
+
+                    {/* Description - Grey, Left Aligned */}
+                    <motion.p
+                      initial={{ opacity: 0, y: 15 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.15 + 0.4 }}
+                      viewport={{ once: true }}
+                      className="text-sm text-gray-600 leading-relaxed mb-4 text-left flex-grow"
+                    >
+                      {service.description}
+                    </motion.p>
+
+                    {/* Technology Tags - Animated */}
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.15 + 0.5 }}
+                      viewport={{ once: true }}
+                      className="flex flex-wrap gap-2 mb-4"
+                    >
+                      {service.technologies.slice(0, 4).map((tech, techIndex) => (
+                        <motion.span
+                          key={tech}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ 
+                            delay: index * 0.15 + 0.5 + techIndex * 0.05,
+                            duration: 0.3
+                          }}
+                          viewport={{ once: true }}
+                          whileHover={{ scale: 1.05 }}
+                          className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-md border border-gray-200 hover:bg-purple-50 hover:border-purple-200 hover:text-purple-700 transition-colors cursor-default"
+                        >
+                          {tech}
+                        </motion.span>
+                      ))}
+                    </motion.div>
+
+                    {/* Learn More Link - Purple, Left Aligned */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.15 + 0.6 }}
+                      viewport={{ once: true }}
+                      className="flex justify-start"
+                    >
+                      <Link
+                        href={`/services/${service.title.toLowerCase().replace(/\s+/g, '-').replace('&', 'and')}`}
+                        className="inline-flex items-center text-purple-600 font-semibold hover:text-purple-700 transition-colors group-hover:gap-2 gap-1"
+                      >
+                        <span>Learn More</span>
+                        <motion.span
+                          animate={{ x: [0, 4, 0] }}
+                          transition={{ duration: 1.5, repeat: Infinity, delay: index * 0.2 }}
+                          className="inline-block"
+                        >
+                          <ArrowRight className="w-4 h-4" />
+                        </motion.span>
+                      </Link>
+                    </motion.div>
+
+                    {/* Hover Glow Effect */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/5 group-hover:to-pink-500/5 transition-all duration-300 rounded-xl pointer-events-none"
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -294,7 +391,7 @@ export default function Services() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-navy mb-6">
+            <h2 className="text-2xl lg:text-2xl font-lato font-bold text-navy mb-6 whitespace-nowrap">
               Our <span className="bg-gradient-to-r from-aqua to-primary-500 bg-clip-text text-transparent">Process</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -321,7 +418,7 @@ export default function Services() {
                     <div className="hidden lg:block absolute top-10 left-1/2 w-full h-0.5 bg-gradient-to-r from-aqua to-primary-500"></div>
                   )}
                 </div>
-                <h3 className="text-xl font-poppins font-semibold text-navy mb-3">
+                <h3 className="text-xl font-lato font-semibold text-navy mb-3">
                   {step.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -343,7 +440,7 @@ export default function Services() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-navy mb-6">
+              <h2 className="text-2xl lg:text-2xl font-lato font-bold text-navy mb-6 whitespace-nowrap">
                 Why Choose <span className="bg-gradient-to-r from-aqua to-primary-500 bg-clip-text text-transparent">Smart IT Core?</span>
               </h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
@@ -357,7 +454,7 @@ export default function Services() {
                     <Star className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-poppins font-semibold text-navy mb-2">98% Client Satisfaction</h3>
+                    <h3 className="text-xl font-lato font-semibold text-navy mb-2">98% Client Satisfaction</h3>
                     <p className="text-gray-600">Our track record speaks for itself with consistently high client satisfaction ratings.</p>
                   </div>
                 </div>
@@ -367,7 +464,7 @@ export default function Services() {
                     <CheckCircle className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-poppins font-semibold text-navy mb-2">On-Time Delivery</h3>
+                    <h3 className="text-xl font-lato font-semibold text-navy mb-2">On-Time Delivery</h3>
                     <p className="text-gray-600">We understand the importance of deadlines and deliver projects on time, every time.</p>
                   </div>
                 </div>
@@ -377,7 +474,7 @@ export default function Services() {
                     <Brain className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-poppins font-semibold text-navy mb-2">Innovation First</h3>
+                    <h3 className="text-xl font-lato font-semibold text-navy mb-2">Innovation First</h3>
                     <p className="text-gray-600">We stay ahead of the curve with cutting-edge technologies and innovative solutions.</p>
                   </div>
                 </div>
@@ -401,7 +498,7 @@ export default function Services() {
                       className="object-contain"
                     />
                   </div>
-                  <h3 className="text-2xl font-poppins font-bold text-navy mb-2">Ready to Start?</h3>
+                  <h3 className="text-2xl font-lato font-bold text-navy mb-2">Ready to Start?</h3>
                   <p className="text-gray-600 mb-6">Let's discuss your project and create something amazing together.</p>
                   <Link
                     href="/contact"

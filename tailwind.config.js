@@ -20,8 +20,8 @@ module.exports = {
         aqua: '#00C4CC',
       },
       fontFamily: {
-        'poppins': ['Poppins', 'sans-serif'],
-        'inter': ['Inter', 'sans-serif'],
+        'lato': ['var(--font-lato)', 'Lato', 'sans-serif'],
+        'montserrat': ['var(--font-montserrat)', 'Montserrat', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

@@ -1,19 +1,19 @@
 import type { Metadata } from 'next'
-import { Poppins, Inter } from 'next/font/google'
+import { Lato, Montserrat } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-const poppins = Poppins({
+const lato = Lato({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700', '800'],
-  variable: '--font-poppins',
+  weight: ['300', '400', '700', '900'],
+  variable: '--font-lato',
 })
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-inter',
+  variable: '--font-montserrat',
 })
 
 export const metadata: Metadata = {
@@ -40,8 +40,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en" className={`${lato.variable} ${montserrat.variable}`}>
+      <body className={`${montserrat.className} antialiased`}>
         <Header />
         <main className="min-h-screen">
           {children}

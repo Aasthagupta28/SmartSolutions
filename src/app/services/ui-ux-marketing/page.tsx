@@ -94,7 +94,7 @@ export default function UIUXMarketing() {
               <span className="text-white font-semibold">UI/UX & Digital Marketing</span>
             </div>
             
-            <h1 className="text-4xl lg:text-6xl font-poppins font-bold text-white mb-6">
+            <h1 className="text-2xl lg:text-3xl font-lato font-bold text-white mb-6 whitespace-nowrap">
               Creative <span className="bg-gradient-to-r from-pink-400 to-white bg-clip-text text-transparent">Design & Marketing</span>
             </h1>
             <p className="text-xl lg:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed mb-8">
@@ -154,7 +154,7 @@ export default function UIUXMarketing() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-navy mb-6">
+            <h2 className="text-2xl lg:text-2xl font-lato font-bold text-navy mb-6 whitespace-nowrap">
               Our <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Design & Marketing</span> Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -178,13 +178,13 @@ export default function UIUXMarketing() {
                     <feature.icon className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-poppins font-bold text-navy">{feature.title}</h3>
+                    <h3 className="text-2xl font-lato font-bold text-navy">{feature.title}</h3>
                     <p className="text-gray-600">{feature.description}</p>
                   </div>
                 </div>
 
                 <div>
-                  <h4 className="font-poppins font-semibold text-navy mb-4">Key Benefits:</h4>
+                  <h4 className="font-lato font-semibold text-navy mb-4">Key Benefits:</h4>
                   <ul className="space-y-2">
                     {feature.benefits.map((benefit, benefitIndex) => (
                       <li key={benefitIndex} className="flex items-center space-x-3">
@@ -210,7 +210,7 @@ export default function UIUXMarketing() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-navy mb-6">
+            <h2 className="text-2xl lg:text-2xl font-lato font-bold text-navy mb-6 whitespace-nowrap">
               Tools & Technologies We <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Master</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -233,7 +233,7 @@ export default function UIUXMarketing() {
                   <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <Palette className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-lg font-poppins font-bold text-navy mb-2">{tech.name}</h3>
+                  <h3 className="text-lg font-lato font-bold text-navy mb-2">{tech.name}</h3>
                   <p className="text-sm text-orange-600 font-medium mb-2">{tech.category}</p>
                   <p className="text-gray-600 text-sm">{tech.description}</p>
                 </div>
@@ -253,7 +253,7 @@ export default function UIUXMarketing() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-navy mb-6">
+            <h2 className="text-2xl lg:text-2xl font-lato font-bold text-navy mb-6 whitespace-nowrap">
               Our Creative <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Process</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -280,7 +280,7 @@ export default function UIUXMarketing() {
                     <div className="hidden lg:block absolute top-10 left-1/2 w-full h-0.5 bg-gradient-to-r from-orange-500 to-red-500"></div>
                   )}
                 </div>
-                <h3 className="text-xl font-poppins font-semibold text-navy mb-3">
+                <h3 className="text-xl font-lato font-semibold text-navy mb-3">
                   {step.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -301,7 +301,7 @@ export default function UIUXMarketing() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-poppins font-bold text-white mb-6">
+            <h2 className="text-2xl lg:text-2xl font-lato font-bold text-white mb-6 whitespace-nowrap">
               Ready to Build a Brand That <span className="bg-gradient-to-r from-pink-400 to-white bg-clip-text text-transparent">People Remember?</span>
             </h2>
             <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">

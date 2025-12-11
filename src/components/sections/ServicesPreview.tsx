@@ -11,28 +11,32 @@ const ServicesPreview = () => {
       title: 'AI & Machine Learning',
       description: 'Chatbots that answer customer questions, automation that saves you time, and AI tools that help you make better decisions from your data.',
       technologies: ['AI/ML', 'Python', 'TensorFlow', 'ChatGPT'],
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-purple-500 to-pink-500',
+      borderColor: 'border-purple-300'
     },
     {
       icon: Code,
       title: 'Web Development',
       description: 'Fast websites and web apps that work great on any device. Whether you need a simple site or a complex platform, we build it right.',
       technologies: ['React', 'Next.js', 'Laravel', 'WordPress'],
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-blue-500 to-cyan-500',
+      borderColor: 'border-blue-300'
     },
     {
       icon: Smartphone,
       title: 'Mobile Development',
       description: 'Mobile apps that feel native on both iPhone and Android. We build apps people actually want to use.',
       technologies: ['React Native', 'Flutter', 'iOS', 'Android'],
-      color: 'from-green-500 to-emerald-500'
+      color: 'from-green-500 to-emerald-500',
+      borderColor: 'border-green-300'
     },
     {
       icon: Palette,
       title: 'UI/UX & Digital Marketing',
       description: 'Designs that look great and work even better. Plus, we help you get found online with SEO and marketing that actually brings in customers.',
       technologies: ['Figma', 'SEO', 'Marketing', 'Analytics'],
-      color: 'from-orange-500 to-red-500'
+      color: 'from-orange-500 to-red-500',
+      borderColor: 'border-orange-300'
     }
   ]
 
@@ -55,7 +59,7 @@ const ServicesPreview = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl lg:text-6xl font-poppins font-extrabold text-slate-900 mb-6">
+          <h2 className="text-2xl lg:text-3xl font-lato font-extrabold text-slate-900 mb-6 whitespace-nowrap">
             Our Services
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -63,55 +67,135 @@ const ServicesPreview = () => {
           </p>
         </motion.div>
 
-        {/* Services Grid - Completely New Design */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        {/* Services Grid - All 4 in One Row with Attractive Borders */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 50, rotateX: -15 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.1,
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }}
               viewport={{ once: true }}
+              whileHover={{ 
+                y: -10,
+                scale: 1.03,
+                transition: { duration: 0.3 }
+              }}
               className="group relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative bg-white rounded-3xl p-8 border-2 border-slate-200 hover:border-purple-300 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2">
-                {/* Icon with New Design */}
-                <div className="mb-6">
-                  <div className={`relative w-20 h-20 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                    <service.icon className="w-10 h-10 text-white" />
-                    <div className="absolute inset-0 bg-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              {/* Attractive Border with Gradient Shadow */}
+              <div className={`relative bg-white rounded-2xl p-6 border-2 ${service.borderColor} shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden h-full flex flex-col group-hover:border-opacity-100`}>
+                {/* Top Gradient Accent Line */}
+                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.color}`}></div>
+                
+                {/* Glow Effect on Hover */}
+                <motion.div
+                  className={`absolute -inset-0.5 bg-gradient-to-r ${service.color} rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`}
+                />
+
+                {/* Icon - Animated */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0, rotate: -180 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: index * 0.1 + 0.2,
+                    type: "spring",
+                    stiffness: 120
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{ 
+                    rotate: [0, -10, 10, -10, 0],
+                    scale: 1.15,
+                    transition: { duration: 0.5 }
+                  }}
+                  className="mb-4 flex justify-center relative z-10"
+                >
+                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-shadow duration-300`}>
+                    <service.icon className="w-8 h-8 text-white" />
                   </div>
-                </div>
+                </motion.div>
 
-                {/* Content */}
-                <h3 className="text-2xl font-poppins font-extrabold text-slate-900 mb-4 group-hover:text-purple-600 transition-colors">
+                {/* Title - Dark, Bold, Left Aligned */}
+                <motion.h3
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
+                  viewport={{ once: true }}
+                  className="text-lg md:text-xl font-lato font-bold text-slate-900 mb-3 text-left group-hover:text-purple-600 transition-colors relative z-10"
+                >
                   {service.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed mb-6 text-base">
-                  {service.description}
-                </p>
+                </motion.h3>
 
-                {/* Technologies - New Style */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {service.technologies.map((tech) => (
-                    <span
+                {/* Description - Grey, Left Aligned */}
+                <motion.p
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
+                  viewport={{ once: true }}
+                  className="text-sm text-gray-600 leading-relaxed mb-4 text-left flex-grow relative z-10"
+                >
+                  {service.description}
+                </motion.p>
+
+                {/* Technology Tags - Animated */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
+                  viewport={{ once: true }}
+                  className="flex flex-wrap gap-2 mb-4 relative z-10"
+                >
+                  {service.technologies.slice(0, 4).map((tech, techIndex) => (
+                    <motion.span
                       key={tech}
-                      className="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg border border-slate-200 hover:bg-purple-50 hover:border-purple-200 hover:text-purple-700 transition-colors"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ 
+                        delay: index * 0.1 + 0.5 + techIndex * 0.05,
+                        duration: 0.3
+                      }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.1 }}
+                      className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-md border border-gray-200 hover:bg-purple-50 hover:border-purple-200 hover:text-purple-700 transition-colors cursor-default"
                     >
                       {tech}
-                    </span>
+                    </motion.span>
                   ))}
-                </div>
+                </motion.div>
 
-                {/* CTA - New Design */}
-                <Link
-                  href="/services"
-                  className="inline-flex items-center text-purple-600 font-bold hover:text-pink-600 transition-colors group-hover:gap-3 gap-2"
+                {/* Learn More Link - Purple, Left Aligned */}
+                <motion.div
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 + 0.6 }}
+                  viewport={{ once: true }}
+                  className="flex justify-start relative z-10"
                 >
-                  <span>Learn More</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                </Link>
+                  <Link
+                    href="/services"
+                    className="inline-flex items-center text-purple-600 font-semibold hover:text-purple-700 transition-colors group-hover:gap-2 gap-1"
+                  >
+                    <span>Learn More</span>
+                    <motion.span
+                      animate={{ x: [0, 4, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity, delay: index * 0.2 }}
+                      className="inline-block"
+                    >
+                      <ArrowRight className="w-4 h-4" />
+                    </motion.span>
+                  </Link>
+                </motion.div>
+
+                {/* Decorative Corner Elements */}
+                <div className={`absolute top-2 right-2 w-3 h-3 bg-gradient-to-br ${service.color} rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                <div className={`absolute bottom-2 left-2 w-2 h-2 bg-gradient-to-br ${service.color} rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
               </div>
             </motion.div>
           ))}
@@ -133,7 +217,7 @@ const ServicesPreview = () => {
             </div>
             
             <div className="relative z-10">
-              <h3 className="text-4xl font-poppins font-extrabold text-white mb-4">
+              <h3 className="text-2xl font-lato font-extrabold text-white mb-4 whitespace-nowrap">
                 Ready to Scale Your Business?
               </h3>
               <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">

@@ -93,20 +93,14 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - New Design */}
+      {/* Hero Section - New Design with bg.png */}
       <section className="relative py-32 overflow-hidden">
-        {/* Video Background */}
+        {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/video.mp4" type="video/mp4" />
-          </video>
+          <div 
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: 'url(/bg.png)' }}
+          ></div>
           {/* Dark Overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-purple-900/70 to-slate-900/80"></div>
           {/* Additional overlay for depth */}
@@ -141,12 +135,8 @@ export default function Portfolio() {
             transition={{ duration: 1 }}
             className="text-center"
           >
-            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-poppins font-extrabold text-white mb-8">
-              Featured
-              <br />
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-                Projects
-              </span>
+            <h1 className="text-2xl lg:text-3xl xl:text-3xl font-lato font-extrabold text-white mb-8 whitespace-nowrap">
+              Featured <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">Projects</span>
             </h1>
             <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Here's what we've built. Real projects, real clients, real results. Take a look at the work we're proud of.
@@ -189,7 +179,7 @@ export default function Portfolio() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-5xl lg:text-6xl font-poppins font-extrabold text-slate-900 mb-6">
+            <h2 className="text-2xl lg:text-3xl font-lato font-extrabold text-slate-900 mb-6 whitespace-nowrap">
               Success Stories That
               <br />
               <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
@@ -255,7 +245,7 @@ export default function Portfolio() {
                       </div>
                     </div>
 
-                    <h3 className="text-3xl font-poppins font-extrabold text-slate-900 mb-4 group-hover:text-purple-600 transition-colors">
+                    <h3 className="text-xl lg:text-2xl font-lato font-extrabold text-slate-900 mb-4 group-hover:text-purple-600 transition-colors whitespace-nowrap">
                       {project.title}
                     </h3>
 
@@ -331,7 +321,7 @@ export default function Portfolio() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-5xl lg:text-6xl font-poppins font-extrabold text-slate-900 mb-6">
+            <h2 className="text-2xl lg:text-3xl font-lato font-extrabold text-slate-900 mb-6 whitespace-nowrap">
               All Our
               <br />
               <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
@@ -398,7 +388,7 @@ export default function Portfolio() {
                       )}
                     </div>
 
-                    <h3 className="text-xl font-poppins font-extrabold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
+                    <h3 className="text-xl font-lato font-extrabold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
                       {project.title}
                     </h3>
 
@@ -490,7 +480,7 @@ export default function Portfolio() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl lg:text-7xl font-poppins font-extrabold text-white mb-6">
+            <h2 className="text-2xl lg:text-3xl font-lato font-extrabold text-white mb-6 whitespace-nowrap">
               Ready to Build
               <br />
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">

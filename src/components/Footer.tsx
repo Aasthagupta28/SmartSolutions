@@ -55,19 +55,10 @@ const Footer = () => {
             className="lg:col-span-1"
           >
             {/* Logo */}
-            <div className="mb-4">
-              <div className="relative w-24 h-24 lg:w-28 lg:h-28">
-                <Image
-                  src="/logo2.png"
-                  alt="SMART IT CORE SOLUTIONS Logo"
-                  fill
-                  className="object-contain drop-shadow-lg"
-                />
-              </div>
-            </div>
+           
             
             {/* Company Name */}
-            <h3 className="font-poppins font-bold text-xl text-white mb-3">
+            <h3 className="font-lato font-bold text-xl text-white mb-3">
               SMART IT CORE SOLUTIONS
             </h3>
             
@@ -112,7 +103,7 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h3 className="font-poppins font-semibold text-lg mb-4">Company</h3>
+            <h3 className="font-lato font-semibold text-lg mb-4">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
@@ -133,7 +124,7 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="font-poppins font-semibold text-lg mb-4">Services</h3>
+            <h3 className="font-lato font-semibold text-lg mb-4">Services</h3>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
@@ -154,7 +145,7 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h3 className="font-poppins font-semibold text-lg mb-4">Resources</h3>
+            <h3 className="font-lato font-semibold text-lg mb-4">Resources</h3>
             <ul className="space-y-3 mb-6">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
@@ -168,7 +159,7 @@ const Footer = () => {
               ))}
             </ul>
             
-            <h4 className="font-poppins font-semibold text-base mb-4">Follow Us</h4>
+            <h4 className="font-lato font-semibold text-base mb-4">Follow Us</h4>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <a

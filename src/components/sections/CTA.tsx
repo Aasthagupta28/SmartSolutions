@@ -40,9 +40,8 @@ const CTA = () => {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-5xl lg:text-7xl font-poppins font-extrabold text-white mb-6">
-              Ready to Transform
-              <br />
+            <h2 className="text-2xl lg:text-3xl font-lato font-extrabold text-white mb-6 whitespace-nowrap">
+              Ready to Transform{' '}
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
                 Your Business?
               </span>
@@ -97,7 +96,7 @@ const CTA = () => {
               <div className="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <MessageCircle className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-poppins font-semibold text-white mb-2">WhatsApp</h3>
+              <h3 className="font-lato font-semibold text-white mb-2">WhatsApp</h3>
               <p className="text-gray-200 text-sm">Quick response via WhatsApp</p>
             </a>
 
@@ -109,7 +108,7 @@ const CTA = () => {
               <div className="w-16 h-16 bg-aqua rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Mail className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-poppins font-semibold text-white mb-2">Email Us</h3>
+              <h3 className="font-lato font-semibold text-white mb-2">Email Us</h3>
               <p className="text-gray-200 text-sm">info@smartitcoresolutions.com</p>
             </a>
 
@@ -121,28 +120,11 @@ const CTA = () => {
               <div className="w-16 h-16 bg-primary-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Phone className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-poppins font-semibold text-white mb-2">Call Us</h3>
+              <h3 className="font-lato font-semibold text-white mb-2">Call Us</h3>
               <p className="text-gray-200 text-sm">+91 9805871945</p>
             </a>
           </motion.div>
 
-          {/* Trust Indicators */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-            className="mt-16 pt-8 border-t border-white/20"
-          >
-            <p className="text-gray-300 text-sm mb-4">Trusted by 50+ companies worldwide</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-              <div className="text-white font-semibold">TechStart</div>
-              <div className="text-white font-semibold">E-Commerce Plus</div>
-              <div className="text-white font-semibold">GrowthCo</div>
-              <div className="text-white font-semibold">InnovateLab</div>
-              <div className="text-white font-semibold">DataFlow</div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

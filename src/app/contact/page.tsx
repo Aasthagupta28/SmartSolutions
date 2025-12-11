@@ -105,20 +105,14 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - New Design */}
+      {/* Hero Section - New Design with bg.png */}
       <section className="relative py-32 overflow-hidden">
-        {/* Video Background */}
+        {/* Background Image */}
         <div className="absolute inset-0 w-full h-full">
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/video.mp4" type="video/mp4" />
-          </video>
+          <div 
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: 'url(/bg.png)' }}
+          ></div>
           {/* Dark Overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-purple-900/70 to-slate-900/80"></div>
           {/* Additional overlay for depth */}
@@ -153,12 +147,8 @@ export default function Contact() {
             transition={{ duration: 1 }}
             className="text-center"
           >
-            <h1 className="text-5xl lg:text-7xl xl:text-8xl font-poppins font-extrabold text-white mb-8">
-              Get In
-              <br />
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
-                Touch
-              </span>
+            <h1 className="text-2xl lg:text-3xl xl:text-3xl font-lato font-extrabold text-white mb-8 whitespace-nowrap">
+              Get In <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">Touch</span>
             </h1>
             <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Got a project in mind? Let's talk. We'll figure out what you need and how we can help make it happen.
@@ -186,7 +176,7 @@ export default function Contact() {
               viewport={{ once: true }}
               className="bg-white rounded-3xl p-8 shadow-xl border-2 border-slate-200 hover:border-purple-300 transition-all duration-300"
             >
-              <h2 className="text-3xl font-poppins font-extrabold text-slate-900 mb-6">
+              <h2 className="text-xl lg:text-2xl font-lato font-extrabold text-slate-900 mb-6 whitespace-nowrap">
                 Send us a Message
               </h2>
               
@@ -199,7 +189,7 @@ export default function Contact() {
                   <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                     <CheckCircle className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-poppins font-extrabold text-slate-900 mb-2">
+                  <h3 className="text-2xl font-lato font-extrabold text-slate-900 mb-2">
                     Message Sent!</h3>
                   <p className="text-slate-600">
                     Thank you for your message. We'll get back to you within 24 hours.
@@ -338,7 +328,7 @@ export default function Contact() {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl font-poppins font-extrabold text-slate-900 mb-6">
+                <h2 className="text-xl lg:text-2xl font-lato font-extrabold text-slate-900 mb-6 whitespace-nowrap">
                   Get in Touch
                 </h2>
                 <p className="text-lg text-slate-600 leading-relaxed mb-8">
@@ -369,7 +359,7 @@ export default function Contact() {
                       <info.icon className="w-8 h-8 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-poppins font-extrabold text-slate-900 mb-1 group-hover:text-purple-600 transition-colors">
+                      <h3 className="font-lato font-extrabold text-slate-900 mb-1 group-hover:text-purple-600 transition-colors">
                         {info.title}
                       </h3>
                       <p className="text-slate-600">{info.details}</p>
@@ -386,7 +376,7 @@ export default function Contact() {
                 viewport={{ once: true }}
                 className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-2xl p-6 text-white border-2 border-purple-500/30"
               >
-                <h3 className="text-xl font-poppins font-extrabold mb-4">
+                <h3 className="text-xl font-lato font-extrabold mb-4">
                   Quick Response Promise
                 </h3>
                 <ul className="space-y-3 text-gray-300">
@@ -432,12 +422,8 @@ export default function Contact() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-5xl lg:text-6xl font-poppins font-extrabold text-slate-900 mb-6">
-              Frequently Asked
-              <br />
-              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-                Questions
-              </span>
+            <h2 className="text-2xl lg:text-3xl font-lato font-extrabold text-slate-900 mb-6 whitespace-nowrap">
+              Frequently Asked <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">Questions</span>
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Got questions? We've got answers. Here are some common questions 
@@ -472,7 +458,7 @@ export default function Contact() {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl p-6 border-2 border-slate-200 hover:border-purple-300 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
               >
-                <h3 className="text-lg font-poppins font-extrabold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
+                <h3 className="text-lg font-lato font-extrabold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
                   {faq.question}
                 </h3>
                 <p className="text-slate-600 leading-relaxed">

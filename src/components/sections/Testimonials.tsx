@@ -18,12 +18,8 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl lg:text-6xl font-poppins font-extrabold text-slate-900 mb-6">
-            Excellence That
-            <br />
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Sets Us Apart
-            </span>
+          <h2 className="text-2xl lg:text-3xl font-lato font-extrabold text-slate-900 mb-6 whitespace-nowrap">
+            Excellence That <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Sets Us Apart</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             We pick the right tech for each project and build solutions that actually work for your business.
@@ -46,7 +42,7 @@ export default function Testimonials() {
             },
             {
               title: 'Experienced Team',
-              description: 'Our developers have worked on hundreds of projects. They know what works and what doesn\'t.',
+              description: 'Our skilled developers bring years of expertise to every project. They know what works and what doesn\'t.',
               icon: '👥',
               gradient: 'from-pink-500 to-rose-500'
             },
@@ -80,7 +76,7 @@ export default function Testimonials() {
               <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-2xl opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-500`}></div>
               <div className="relative bg-white rounded-2xl p-8 border-2 border-slate-100 hover:border-purple-200 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-3">
                 <div className="text-5xl mb-4 transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">{feature.icon}</div>
-                <h3 className="text-xl font-poppins font-extrabold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
+                <h3 className="text-xl font-lato font-extrabold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
                   {feature.title}
                 </h3>
                 <p className="text-slate-600 leading-relaxed text-sm">
@@ -113,10 +109,10 @@ export default function Testimonials() {
           
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             {[
-              { number: '100+', label: 'Projects Delivered', color: 'from-purple-400 to-pink-400' },
-              { number: '98%', label: 'Client Satisfaction', color: 'from-blue-400 to-cyan-400' },
-              { number: '24/7', label: 'Support Available', color: 'from-pink-400 to-rose-400' },
-              { number: '5+', label: 'Years Experience', color: 'from-purple-400 to-indigo-400' }
+              { number: '98%', label: 'Client Satisfaction Rate', color: 'from-purple-400 to-pink-400' },
+              { number: '5+', label: 'Years of Excellence', color: 'from-blue-400 to-cyan-400' },
+              { number: '24/7', label: 'Round-the-Clock Support', color: 'from-pink-400 to-rose-400' },
+              { number: '100%', label: 'Quality Commitment', color: 'from-purple-400 to-indigo-400' }
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
